@@ -27,35 +27,35 @@ def validate():
     email = request.form['email']
     error_msg = ''
     if not username:
-        error_msg += "error1=username is required&"
+        error_msg += "error1=Username is required.&"
     elif re.search('\s', username):
-        error_msg += "error1=username must not contain space characters&"
+        error_msg += "error1=Username must not contain space characters.&"
         username = re.sub('\s', '', username)
     elif invalid_string_length(username):
-        error_msg += "error1=username must be between 3 and 20 characters&"
+        error_msg += "error1=Username must be between 3 and 20 characters.&"
     if not password1:
-        error_msg += "error2=password is required&"
+        error_msg += "error2=Password is required.&"
     elif re.search('\s', password1):
-        error_msg += "error2=password must not contain space characters&"
+        error_msg += "error2=Password must not contain space characters.&"
     elif invalid_string_length(password1):
-        error_msg += "error2=password must be between 3 and 20 characters&"
+        error_msg += "error2=Password must be between 3 and 20 characters.&"
     elif not password2:
-        error_msg += "error3=verify password is required&"
+        error_msg += "error3=Verify password is required.&"
     elif re.search('\s', password2):
-        error_msg += "error3=verify password must not contain space characters&"
+        error_msg += "error3=Verify password must not contain space characters.&"
     elif invalid_string_length(password2):
-        error_msg += "error3=verify password must be between 3 and 20 characters&"
+        error_msg += "error3=Verify password must be between 3 and 20 characters.&"
     elif password1 != password2:
-        error_msg += "error3=verify password does not match&"
+        error_msg += "error3=Verify password does not match.&"
     if email:
         if len(email.split('@')) != 2:
-            error_msg += "error4=email must contain exactly one @ symbol&"
+            error_msg += "error4=Email must contain one @ symbol.&"
         elif len(email.split('.')) != 2:
-            error_msg += "error4=email must contain exactly one period&"
+            error_msg += "error4=Email must contain one period&"
         elif re.search('\s', email):
-            error_msg += "error4=email must not contain space characters so I removed them&"
+            error_msg += "error4=Email must not contain space characters.&"
         elif invalid_string_length(email):
-            error_msg += "error4=email must be between 3 and 20 characters&"
+            error_msg += "error4=Email must be between 3 and 20 characters.&"
             
     if not (error_msg):
         return render_template('welcome.html', username = username)
