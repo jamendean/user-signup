@@ -51,7 +51,7 @@ def validate():
         if len(email.split('@')) != 2:
             error_msg += "error4=Email must contain one @ symbol.&"
         elif len(email.split('.')) != 2:
-            error_msg += "error4=Email must contain one period&"
+            error_msg += "error4=Email must contain one period.&"
         elif re.search('\s', email):
             error_msg += "error4=Email must not contain space characters.&"
         elif invalid_string_length(email):
