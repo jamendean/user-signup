@@ -55,7 +55,7 @@ def validate():
         elif re.search('\s', email):
             error_msg += "error4=email must not contain space characters so I removed them&"
         elif invalid_string_length(email):
-            error_msg += "error4=email must be between 3 and 20 characters&
+            error_msg += "error4=email must be between 3 and 20 characters&"
             
     if not (error_msg):
         return render_template('welcome.html', username = username)
