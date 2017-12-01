@@ -58,7 +58,7 @@ def validate():
             error_msg += "error4=email must be between 3 and 20 characters&"
             
     if not (error_msg):
-        return render_template('welcome.html', username = username)
+        return render_template('welcome.html', username = username
     else:
         return redirect('/?' + error_msg + 'username=' + username + '&email=' + email)
 
