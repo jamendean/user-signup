@@ -29,24 +29,24 @@ def validate():
     if not username:
         error_msg += "error1=username is required&"
     elif re.search('\s', username):
-        error_msg += "error1=username must not contain space characters so I removed them&"
+        error_msg += "error1=username must not contain space characters&"
         username = re.sub('\s', '', username)
     elif invalid_string_length(username):
         error_msg += "error1=username must be between 3 and 20 characters&"
     if not password1:
         error_msg += "error2=password is required&"
     elif re.search('\s', password1):
-        error_msg += "error2=password must not contain space characters so I removed them&"
+        error_msg += "error2=password must not contain space characters&"
     elif invalid_string_length(password1):
         error_msg += "error2=password must be between 3 and 20 characters&"
     elif not password2:
         error_msg += "error3=verify password is required&"
     elif re.search('\s', password2):
-        error_msg += "error3=verify password must not contain space characters so I removed them&"
+        error_msg += "error3=verify password must not contain space characters&"
     elif invalid_string_length(password2):
         error_msg += "error3=verify password must be between 3 and 20 characters&"
     elif password1 != password2:
-        error_msg += "error3=verify password does not match password&"
+        error_msg += "error3=verify password does not match&"
     if email:
         if len(email.split('@')) != 2:
             error_msg += "error4=email must contain exactly one @ symbol&"
